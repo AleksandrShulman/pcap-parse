@@ -2,7 +2,7 @@ import json
 
 import pytest
 
-from utils import ParsingUtils
+from utils.ParsingUtils import ParsingUtils
 
 
 @pytest.fixture(scope="module")
@@ -128,4 +128,4 @@ def test_get_price(valid_value):
 
 
 if __name__ == "__main__":
-    pytest.main(["-x", "TestParsing.py"])
+    pytest.main(["-x", "test_parsing.py"])
