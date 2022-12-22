@@ -1,4 +1,4 @@
-from main.strategy.utils.ParsingUtils import ParsingUtils
+from main.utils.ParsingUtils import ParsingUtils
 
 
 class Strategy:
