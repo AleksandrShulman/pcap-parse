@@ -1,7 +1,7 @@
-from strategy import AverageTimeStrategy
-from strategy import FrequencyFastestKStrategy
+from strategy.AverageTimeStrategy import AverageTimeStrategy
+from strategy.FrequencyFastestKStrategy import FrequencyFastestKStrategy
+from strategy.WeightedFastestStrategy import WeightedFastestStrategy
 from strategy import Strategy
-from strategy import WeightedFastestStrategy
 
 
 class StrategyMap:
@@ -13,9 +13,9 @@ class StrategyMap:
 
     def __init__(self, k=1):
         self.id_to_strategy = {
-            1: AverageTimeStrategy.AverageTimeStrategy(),
-            2: FrequencyFastestKStrategy.FrequencyFastestKStrategy(k),
-            3: WeightedFastestStrategy.WeightedFastestStrategy()
+            1: AverageTimeStrategy(),
+            2: FrequencyFastestKStrategy(k),
+            3: WeightedFastestStrategy()
         }
 
     def get_strategy(self, strategy_id) -> Strategy:
