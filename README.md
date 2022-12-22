@@ -11,18 +11,23 @@ no arguments will run all available strategies.
 
 Use `python ProcessPCACP.py -h` to see all the available options.
 
-####What's a strategy?
+#### File Parsing -- What are we doing here? ####
+The repo contains a parsed json version of `feed_arbitaage.pcap`. 
+If you want to parse your own, the application allows that. Just specify your
+input file with `-i` and its output with `-o`.
+
+####What's a strategy? ####
 It's a way of using parsed frames (from .pcap) to generate an understanding
 of the lowest-latency -n (default=2) sources.
 
-####Suppose I don't know what a strategy is ... can I just decide to not provide one?
+####Suppose I don't know what a strategy is ... can I just decide to not provide one? ####
 No problem - the program will run them all.
 
-####What if I want to add a strategy because I'm clever?
+####What if I want to add a strategy because I'm clever?####
 Please do. Just add to the `main.strategies` package and adjust the 
 `StrategyMap` accordingly.
 
-####What is this mysterious `-k` argument all about?
+####What is this mysterious `-k` argument all about? ####
 There is a set of strategies, `FrequencyFastestKStrategy` that use this parameter. `-k` normally defaults
 to `1`, which means that we are counting the number of times a given source is the fastest.
 
