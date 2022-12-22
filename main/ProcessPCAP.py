@@ -85,14 +85,14 @@ def execute_strategy(strategy: Strategy, input, output, num_best=2):
 
 if __name__ == "__main__":
     args = parse()
-    sm = StrategyMap(args.k)
+    sm = StrategyMap(args.k_top_candidates)
 
-    if args.s != 0:
+    if args.strategy != 0:
         strategy = sm.get_strategy(args.s)
 
-        print("Executing single strategy {} to produce top {} sources".format(strategy, args.n))
-        execute_strategy(strategy, args.i, args.o, args.n)
+        print("Executing single strategy {} to produce top {} sources".format(strategy, args.num_best))
+        execute_strategy(strategy, args.input, args.output, args.num_best)
     else:
-        print("Executing all strategies to produce top {} sources:".format(args.n))
+        print("Executing all strategies to produce top {} sources:".format(args.num_best))
         for strategy in sm.id_to_strategy.values():
-            execute_strategy(strategy, args.i, args.o, args.n)
+            execute_strategy(strategy, args.input, args.output, args.num_best)

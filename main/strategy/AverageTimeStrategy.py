@@ -1,5 +1,5 @@
 from main.strategy.Strategy import Strategy
-from main.strategy.utils.CollectionUtils import CollectionUtils
+from main.utils.CollectionUtils import CollectionUtils
 
 
 class AverageTimeStrategy(Strategy):

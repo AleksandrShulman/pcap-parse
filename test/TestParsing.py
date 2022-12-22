@@ -2,7 +2,7 @@ import json
 
 import pytest
 
-from main.strategy.utils.ParsingUtils import ParsingUtils
+from main.utils import ParsingUtils
 
 
 @pytest.fixture(scope="module")
