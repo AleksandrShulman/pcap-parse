@@ -1,8 +1,8 @@
 # pcap-parse
-###Parsing packets for fun &amp; profit
+### Parsing packets for fun &amp; profit
 
-##FAQ:
-####First and foremost, how do I even run this?
+## FAQ:
+#### First and foremost, how do I even run this?
 It's always best to make the common case fast, that's why no arguments are required.
 The repository contains the pre-processed `pcap` files for ease-of-use. Providing
 no arguments will run all available strategies.
