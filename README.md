@@ -22,3 +22,13 @@ No problem - the program will run them all.
 Please do. Just add to the `main.strategies` package and adjust the 
 `StrategyMap` accordingly.
 
+####What is this mysterious `-k` argument all about?
+There is a set of strategies, `FrequencyFastestKStrategy` that use this parameter. `-k` normally defaults
+to `1`, which means that we are counting the number of times a given source is the fastest.
+
+Adjusting `-k` to be `2`, for example, means we're curious if a given source is one of the first `2` fastest,
+and so forth. The obvious downside is that increasing `k` also means giving less relative merit to 1st place, as opposed
+to `k`th place, which are judged equally. This makes sense if there are large number of inputs.
+
+To get fine-grained differentiation, there are other strategies like `WeightedFastestStrategy` that 
+would distinguish between 1st and 3rd place, for example.
