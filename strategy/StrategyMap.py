@@ -40,6 +40,6 @@ class StrategyMap:
                 """
         output += "\n"
         for (sid, strategy) in StrategyMap.id_to_strategy_template.items():
-            output += "\n{}: {}".format(sid, strategy)
+            output += "{}: {}".format(sid, strategy.get_name())
 
         return output

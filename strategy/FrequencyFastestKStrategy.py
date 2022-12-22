@@ -25,8 +25,9 @@ class FrequencyFastestKStrategy(Strategy):
         sorted_outputs = CollectionUtils.sort_tuple_by_values(outputs)
         return sorted_outputs[:n]
 
-    def get_name(self):
-        return "Frequency of Fastest-Top-K {} Sources\n".format(self.top_k_value)
+    @staticmethod
+    def get_name():
+        return "Frequency of Fastest-Top-K Sources\n"
 
     def __str__(self):
         return self.get_name()

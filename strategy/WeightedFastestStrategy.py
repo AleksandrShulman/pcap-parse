@@ -7,7 +7,8 @@ class WeightedFastestStrategy(Strategy):
     def __init__(self):
         pass
 
-    def get_name(self):
+    @staticmethod
+    def get_name():
         return "Frequency of Weighted Fastest Sources\n"
 
     def get_top_data_providers(self, frames):
