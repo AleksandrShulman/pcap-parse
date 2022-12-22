@@ -1,5 +1,5 @@
-from main.strategy.Strategy import Strategy
-from main.utils.CollectionUtils import CollectionUtils
+from strategy.Strategy import Strategy
+from utils.CollectionUtils import CollectionUtils
 
 
 class FrequencyFastestKStrategy(Strategy):

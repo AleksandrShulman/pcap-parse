@@ -2,8 +2,8 @@ import argparse
 import json
 import pathlib
 
-from main.strategy.Strategy import Strategy
-from main.strategy.StrategyMap import StrategyMap
+from strategy import StrategyMap
+from strategy.Strategy import Strategy
 
 
 class ProcessPCAC:
@@ -63,18 +63,18 @@ def parse():
                         help='Only for FrequencyFastestKStrategy: Number of top candidates considered ')
     parser.add_argument('-s', '--strategy', action='store', type=int, required=False,
                         default=0,
-                        help=StrategyMap().__str__())
+                        help=StrategyMap.StrategyMap.default_help())
 
     return parser.parse_args()
 
 
 def get_default_input_path():
-    resource_path = pathlib.Path.cwd() / "../resources"
+    resource_path = pathlib.Path.cwd() / "resources"
     return resource_path / "feed_arbitrage.pcap"
 
 
 def get_default_output_path():
-    resource_path = pathlib.Path.cwd() / "../resources"
+    resource_path = pathlib.Path.cwd() / "resources"
     return resource_path / "parsed_pcap.json"
 
 
@@ -85,7 +85,7 @@ def execute_strategy(strategy: Strategy, input, output, num_best=2):
 
 if __name__ == "__main__":
     args = parse()
-    sm = StrategyMap(args.k_top_candidates)
+    sm = StrategyMap.StrategyMap(args.k_top_candidates)
 
     if args.strategy != 0:
         strategy = sm.get_strategy(args.s)

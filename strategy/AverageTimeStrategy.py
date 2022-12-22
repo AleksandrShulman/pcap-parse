@@ -1,5 +1,5 @@
-from main.strategy.Strategy import Strategy
-from main.utils.CollectionUtils import CollectionUtils
+from strategy.Strategy import Strategy
+from utils.CollectionUtils import CollectionUtils
 
 
 class AverageTimeStrategy(Strategy):
@@ -20,7 +20,8 @@ class AverageTimeStrategy(Strategy):
         sorted_outputs = CollectionUtils.sort_map_by_values(outputs)
         return sorted_outputs[:n]
 
-    def get_name(self):
+    @staticmethod
+    def get_name():
         return "Mean of Sources\n"
 
     def __str__(self):

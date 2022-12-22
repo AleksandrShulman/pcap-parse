@@ -1,7 +1,11 @@
-from main.utils.ParsingUtils import ParsingUtils
+from utils.ParsingUtils import ParsingUtils
 
 
 class Strategy:
+
+    def __init__(self):
+        pass
+
     def get_top_n_data_providers(self, frames, n):
         # Implement this in child strategies
         pass

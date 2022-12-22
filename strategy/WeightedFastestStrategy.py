@@ -1,8 +1,11 @@
-from main.strategy.Strategy import Strategy
-from main.utils.CollectionUtils import CollectionUtils
+from strategy.Strategy import Strategy
+from utils.CollectionUtils import CollectionUtils
 
 
 class WeightedFastestStrategy(Strategy):
+
+    def __init__(self):
+        pass
 
     def get_name(self):
         return "Frequency of Weighted Fastest Sources\n"
