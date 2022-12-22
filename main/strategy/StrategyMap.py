@@ -21,6 +21,7 @@ class StrategyMap:
         Strategy to execute:
         [DEFAULT] Run all strategies: 0 [recommended because it\'s awesome :)]
         """
+        output += "\n"
         for (sid, strategy) in self.id_to_strategy.items():
             output += "\n{}: {}".format(sid, strategy)
 

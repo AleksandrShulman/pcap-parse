@@ -27,4 +27,7 @@ class FrequencyFastestKStrategy(Strategy):
         return sorted_outputs[:n]
 
     def get_name(self):
-        return "Frequency of Fastest-Top-K {} Sources".format(self.top_k_value)
+        return "Frequency of Fastest-Top-K {} Sources\n".format(self.top_k_value)
+
+    def __str__(self):
+        return self.get_name()

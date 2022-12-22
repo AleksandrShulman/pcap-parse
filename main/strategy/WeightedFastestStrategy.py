@@ -5,7 +5,7 @@ from main.strategy.utils.CollectionUtils import CollectionUtils
 class WeightedFastestStrategy(Strategy):
 
     def get_name(self):
-        return "Frequency of Weighted Fastest Sources"
+        return "Frequency of Weighted Fastest Sources\n"
 
     def get_top_data_providers(self, frames):
         output_dict = dict()
@@ -38,3 +38,6 @@ class WeightedFastestStrategy(Strategy):
             points -= 15
 
         return points
+
+    def __str__(self):
+        return self.get_name()

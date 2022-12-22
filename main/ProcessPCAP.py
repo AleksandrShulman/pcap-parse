@@ -48,20 +48,20 @@ def parse():
         description='Run a test of lowest-latency input sources given a strategy'
     )
 
-    parser.add_argument('-i', action='store', type=str, required=False,
+    parser.add_argument('-i', '--input', action='store', type=str, required=False,
                         default=get_default_input_path(),
                         help='Path to the input PCAP file. By default will use bundled sample file.')
-    parser.add_argument('-o', action='store', type=str, required=False,
+    parser.add_argument('-o', '--output', action='store', type=str, required=False,
                         default=get_default_output_path(),
                         help='Path to the output of parsing the PCAP file into json. '
                              'By default will use pre-processed file.')
-    parser.add_argument('-n', action='store', type=int, required=False,
+    parser.add_argument('-n', '--num-best', action='store', type=int, required=False,
                         default=2,
                         help='The number of top sources to report. All other sources omitted.')
-    parser.add_argument('-k', action='store', type=int, required=False,
+    parser.add_argument('-k', '--k-top-candidates', action='store', type=int, required=False,
                         default=1,
                         help='Only for FrequencyFastestKStrategy: Number of top candidates considered ')
-    parser.add_argument('-s', action='store', type=int, required=False,
+    parser.add_argument('-s', '--strategy', action='store', type=int, required=False,
                         default=0,
                         help=StrategyMap().__str__())
 
